@@ -4,16 +4,16 @@ from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
-class Gender(models.Model):
-    description = models.CharField(max_length=9, blank=True, null=True)
+# class Gender(models.Model):
+#     description = models.CharField(max_length=9, blank=True, null=True)
 
-    def __str__(self):
-        return self.description
+#     def __str__(self):
+#         return self.description
 
 class Student(models.Model):
-    user     = models.OneToOneField(User, on_delete=models.CASCADE)
-    birthday = models.DateField(null=True)
-    gender   = models.ForeignKey(Gender, related_name='student')
+    name        = models.CharField(max_length=100)
+    birthday    = models.DateField(null=True)
+    # gender      = models.ForeignKey(Gender, on_delete=models.CASCADE, related_name='student')
 
     def __str__(self):
         return self.user.get_full_name()
@@ -32,7 +32,7 @@ class Measures(models.Model):
     forearm        = models.DecimalField(max_digits=6, decimal_places=2)
     fist           = models.DecimalField(max_digits=6, decimal_places=2)
 
-class SkinFolds(models.Model)
+class SkinFolds(models.Model):
     biceps      = models.DecimalField(max_digits=6, decimal_places=2)
     triceps     = models.DecimalField(max_digits=6, decimal_places=2)
     abdominal   = models.DecimalField(max_digits=6, decimal_places=2)
@@ -50,4 +50,4 @@ class Appraisal(models.Model):
     body_fat   = models.DecimalField(max_digits=6, decimal_places=2)
     measures   = models.ForeignKey(Measures, related_name='appraisals', on_delete=models.CASCADE)
     skin_folds = models.ForeignKey(SkinFolds, related_name='appraisals', on_delete=models.CASCADE)
-    student    = models.ForeignKey(Student, related_name='appraisals')
+    student    = models.ForeignKey(Student, related_name='appraisals', on_delete=models.CASCADE)
