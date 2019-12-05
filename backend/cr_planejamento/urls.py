@@ -21,5 +21,6 @@ from student.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api-auth/', include('rest_framework.urls')),
-    path('appraisal/', include('student.urls', namespace='appraisal')),
+    path('students/', include('student.urls', namespace='student')),
+    path('appraisals/', include('appraisal.urls', namespace='appraisal'))
 ]
