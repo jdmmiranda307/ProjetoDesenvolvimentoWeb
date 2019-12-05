@@ -12,15 +12,3 @@ from django.shortcuts import render
 class StudentViewSet(viewsets.ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-
-class MeasuresViewSet(viewsets.ModelViewSet):
-    queryset = Measures.objects.all()
-    serializer_class = MeasuresSerializer
-
-class SkinFoldsViewSet(viewsets.ModelViewSet):
-    queryset = SkinFolds.objects.all()
-    serializer_class = SkinFoldsSerializer
-
-class AppraisalViewSet(viewsets.ModelViewSet):
-    queryset = SkinFolds.objects.all()
-    serializer_class = SkinFoldsSerializer

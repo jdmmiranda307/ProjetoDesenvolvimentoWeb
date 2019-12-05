@@ -20,11 +20,7 @@ from rest_framework import routers
 
 routers = routers.DefaultRouter()
 
-routers.register('student', views.StudentViewSet, basename="student")
-routers.register('measures', views.MeasuresViewSet, basename="measures")
-routers.register('skinfolds', views.SkinFoldsViewSet, basename="skinfolds")
-routers.register('appraisals', views.AppraisalViewSet, basename="appraisals")
-
+routers.register('', views.StudentViewSet, basename="student")
 
 app_name = "student"
 urlpatterns = [
