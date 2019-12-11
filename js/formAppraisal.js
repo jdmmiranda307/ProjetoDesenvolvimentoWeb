@@ -2,11 +2,6 @@ const formAppraisalContent =             "<form>"+
                "<div class='form-group'>"+
                   "<label for='aluno-field'>Aluno</label>"+
                   "<select class='form-control' id='aluno-select'>"+
-                     "<option>1</option>"+
-                     "<option>2</option>"+
-                     "<option>3</option>"+
-                     "<option>4</option>"+
-                     "<option>5</option>"+
                   "</select>"+
                "</div>"+
                "<div class='form-group'>"+
